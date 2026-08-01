@@ -39,9 +39,13 @@ to the nav in all the other pages.
 
 ## Places page
 
-Photos live in `assets/img/places/`, one `<section class="place">` per place in
-`places.html`. A place with one photo gets the full width; two or more share the
-row.
+Photos live in `assets/img/places/`, one `<figure>` per place in `places.html`.
+
+That page carries `class="wide"` on its `<body>`, which widens the container to
+`min(94vw, 84rem)` — it follows the window instead of sticking to the reading
+width used by the text pages. The grid then fits as many columns as the window
+allows: four on a large monitor, one on a phone. Add the same class to any other
+page that needs the room.
 
 Every photo is a **1200×800 JPEG** (3:2), which is what keeps the rows aligned.
 Phone photos are not that — they are 4032×3024 HEIC files that Chrome and

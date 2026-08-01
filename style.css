@@ -110,7 +110,10 @@ p {
 
 .nav-links {
   display: flex;
-  gap: 1.25rem;
+  flex-wrap: wrap; /* without this the links push the page wider than a phone */
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem 1.25rem;
   font-size: 0.95rem;
 }
 
@@ -333,27 +336,29 @@ ul.plain li {
 
 /* ── Places ────────────────────────────────────────────────────── */
 
-.place {
-  margin-bottom: 2.25rem;
+/* Photos need more room than a column of text does. Put class="wide" on <body>
+   so the nav bar widens with the content and stays aligned with it.
+   This one follows the window: most of the viewport, capped so the photos do
+   not turn into a wall on an ultrawide monitor. */
+body.wide main,
+body.wide .nav-inner {
+  max-width: min(94vw, 84rem);
 }
 
-.place h2 {
-  border: none;
-  font-size: 1.25rem;
-  margin-bottom: 0.6rem;
-  padding-bottom: 0;
-}
-
-/* A place with one photo gets the full width; two or more share the row and
-   drop to a single column on a phone. All photos are cropped to 3:2, so the
-   rows always line up. */
-.gallery {
+/* Two photos per row on a desktop, one on a phone. Every photo is cropped to
+   3:2, so the rows line up whatever the source was. */
+.places-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.75rem 1.25rem;
 }
 
-.gallery img {
+.places-grid figure {
+  margin: 0;
+}
+
+.places-grid img {
+  display: block;
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
@@ -361,9 +366,16 @@ ul.plain li {
   background: var(--rule);
 }
 
-.caption {
-  margin: 0.6rem 0 0;
-  font-size: 0.93rem;
+.places-grid figcaption {
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.places-grid .caption {
+  margin: 0.15rem 0 0;
+  font-size: 0.9rem;
   color: var(--muted);
 }
 
@@ -402,5 +414,12 @@ footer {
 
   .nav-inner {
     justify-content: center;
+  }
+
+  /* Pin the links to the container width so they wrap inside it instead of
+     stretching the whole page wider than the screen. */
+  .nav-links {
+    width: 100%;
+    gap: 0.35rem 0.9rem;
   }
 }

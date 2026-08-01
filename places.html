@@ -15,7 +15,7 @@
     </script>
   </head>
 
-  <body>
+  <body class="wide">
     <nav class="nav">
       <div class="nav-inner">
         <a class="nav-name" href="index.html">Wenrong Zou</a>
@@ -45,85 +45,65 @@
       <p class="lead">A few photos I took while travelling.</p>
 
       <!--
-        One <section class="place"> per place, most recent first. Photos live in
-        assets/img/places/ and are listed inside <div class="gallery">; add as
-        many as you like, they wrap onto the next row automatically.
+        One <figure> per place, most recent first, laid out two per row. Photos
+        live in assets/img/places/ and every one of them is a 1200x800 JPEG —
+        crop new ones to 3:2 the same way or they will not line up.
 
-        Every photo here is 1200×800. If you add one, crop it to 3:2 and resize
-        it the same way, otherwise it will not line up with the rest.
-
-        A <p class="caption"> line under a gallery is optional.
+        An extra <p class="caption"> under the figcaption is optional.
       -->
 
-      <section class="place">
-        <h2>Lisboa</h2>
-        <div class="gallery">
+      <div class="places-grid">
+        <figure>
           <img src="assets/img/places/lisboa.jpg" alt="Lisboa" loading="lazy" />
-        </div>
-      </section>
+          <figcaption>Lisboa</figcaption>
+        </figure>
 
-      <section class="place">
-        <h2>London</h2>
-        <div class="gallery">
+        <figure>
           <img src="assets/img/places/london1.jpg" alt="London" loading="lazy" />
-        </div>
-      </section>
+          <figcaption>London</figcaption>
+        </figure>
 
-      <section class="place">
-        <h2>Milano</h2>
-        <div class="gallery">
+        <figure>
           <img src="assets/img/places/milano.jpg" alt="Milano" loading="lazy" />
-        </div>
-      </section>
+          <figcaption>Milano</figcaption>
+        </figure>
 
-      <section class="place">
-        <h2>Venice</h2>
-        <div class="gallery">
+        <figure>
           <img src="assets/img/places/venice.jpg" alt="Venice" loading="lazy" />
-        </div>
-      </section>
+          <figcaption>Venice</figcaption>
+        </figure>
 
-      <section class="place">
-        <h2>Paris</h2>
-        <div class="gallery">
+        <figure>
           <img src="assets/img/places/paris.jpg" alt="Paris" loading="lazy" />
-        </div>
-      </section>
+          <figcaption>Paris</figcaption>
+        </figure>
 
-      <section class="place">
-        <h2>Lyon</h2>
-        <div class="gallery">
+        <figure>
           <img src="assets/img/places/lyon1.jpg" alt="Lyon" loading="lazy" />
-        </div>
-      </section>
+          <figcaption>Lyon</figcaption>
+        </figure>
 
-      <section class="place">
-        <h2>Munich</h2>
-        <div class="gallery">
+        <figure>
           <img src="assets/img/places/munich.jpg" alt="Munich" loading="lazy" />
-        </div>
-      </section>
+          <figcaption>Munich</figcaption>
+        </figure>
 
-      <section class="place">
-        <h2>Beijing</h2>
-        <div class="gallery">
+        <figure>
           <img src="assets/img/places/beijing.jpg" alt="Beijing" loading="lazy" />
-        </div>
-      </section>
+          <figcaption>Beijing</figcaption>
+        </figure>
 
-      <section class="place">
-        <h2>Hong Kong</h2>
-        <div class="gallery">
+        <figure>
           <img src="assets/img/places/hongkong.jpg" alt="Hong Kong" loading="lazy" />
-        </div>
-      </section>
+          <figcaption>Hong Kong</figcaption>
+        </figure>
 
-      <section class="place">
-        <h2>Guangzhou</h2>
-        <div class="gallery">
+        <figure>
           <img src="assets/img/places/guangzhou.jpg" alt="Guangzhou" loading="lazy" />
-        </div>
-      </section>
+          <figcaption>Guangzhou</figcaption>
+        </figure>
+      </div>
+
 
       <footer>Last updated August 2026.</footer>
     </main>
