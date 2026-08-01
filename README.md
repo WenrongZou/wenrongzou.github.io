@@ -40,10 +40,22 @@ to the nav in all the other pages.
 
 ## Places page
 
-Drop photos into `assets/img/places/` and add one block per place in
-`places.html`. They are laid out in a row 230 px tall that wraps, so mixed
-portrait and landscape shots still line up. Resize photos to about 1200 px on
-the long side before committing — full-size phone photos make the page slow.
+Photos live in `assets/img/places/`, one `<section class="place">` per place in
+`places.html`. A place with one photo gets the full width; two or more share the
+row.
+
+Every photo is a **1200×800 JPEG** (3:2), which is what keeps the rows aligned.
+Phone photos are not that — they are 4032×3024 HEIC files that Chrome and
+Firefox cannot display at all. To add one, convert it first:
+
+```bash
+sips -s format jpeg -s formatOptions 80 IMG_1234.HEIC --out new.jpg
+sips --resampleWidth 1200 new.jpg      # portrait photos: --resampleHeight 800
+sips -c 800 1200 new.jpg               # centre-crop to exactly 3:2
+```
+
+If the photo was taken in portrait orientation, `sips -r 90` it first and clear
+its EXIF orientation tag, or browsers will rotate it a second time.
 
 ## Profile photo
 

@@ -325,6 +325,12 @@ ul.plain li {
   min-width: 0;
 }
 
+/* One-line introduction under a page title. */
+.lead {
+  margin: -1.2rem 0 2rem;
+  color: var(--muted);
+}
+
 /* ── Places ────────────────────────────────────────────────────── */
 
 .place {
