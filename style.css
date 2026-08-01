@@ -325,6 +325,42 @@ ul.plain li {
   min-width: 0;
 }
 
+/* ── Places ────────────────────────────────────────────────────── */
+
+.place {
+  margin-bottom: 2.25rem;
+}
+
+.place h2 {
+  border: none;
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0;
+}
+
+/* A place with one photo gets the full width; two or more share the row and
+   drop to a single column on a phone. All photos are cropped to 3:2, so the
+   rows always line up. */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.6rem;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--rule);
+}
+
+.caption {
+  margin: 0.6rem 0 0;
+  font-size: 0.93rem;
+  color: var(--muted);
+}
+
 /* ── Footer ────────────────────────────────────────────────────── */
 
 footer {
