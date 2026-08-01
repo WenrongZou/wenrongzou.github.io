@@ -3,9 +3,8 @@
 Personal homepage. Plain HTML and CSS — no Jekyll, no build step, no dependencies.
 
 ```
-index.html          about / landing page, awards
+index.html          about, awards, education
 research.html       interests, formalisation projects, publications
-education.html      degrees
 teaching.html       courses (empty for now)
 talks.html          seminar talks and notes
 places.html         photos, one block per place
