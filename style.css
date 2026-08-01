@@ -123,6 +123,12 @@ p {
   color: var(--fg);
 }
 
+/* The page you are currently on. */
+.nav-links a.active {
+  color: var(--fg);
+  font-weight: 600;
+}
+
 /* Theme toggle */
 #theme-toggle {
   background: none;
@@ -214,11 +220,20 @@ h1 {
   background: var(--rule);
 }
 
+/* Heading of a subpage (Research, Education, …). */
+.page-title {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0 0 2rem;
+}
+
 /* ── Sections ──────────────────────────────────────────────────── */
 
 section {
   margin-bottom: 2.75rem;
-  scroll-margin-top: 4.5rem; /* keeps anchors clear of the sticky nav */
 }
 
 h2 {

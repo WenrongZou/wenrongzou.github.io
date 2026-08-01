@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>" />
     <script>
-      // Runs before first paint so a saved choice never flashes the wrong theme.
-      // No stored value = follow the operating system.
       (function () {
         var saved = localStorage.getItem("theme");
         if (saved) document.documentElement.setAttribute("data-theme", saved);
@@ -18,15 +16,17 @@
   </head>
 
   <body>
+    <!-- NOTE: this nav is copied into every page. If you change it, change it
+         in all five .html files. Only the "active" class differs between them. -->
     <nav class="nav">
       <div class="nav-inner">
-        <a class="nav-name" href="#top">Wenrong Zou</a>
+        <a class="nav-name" href="index.html">Wenrong Zou</a>
         <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#education">Education</a>
-          <!-- <a href="#talks">Talks</a> -->
-          <!-- <a href="#conferences">Conferences</a> -->
+          <a class="active" href="index.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="education.html">Education</a>
+          <a href="talks.html">Talks</a>
+          <a href="conferences.html">Conferences</a>
           <button id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" />
@@ -40,8 +40,7 @@
       </div>
     </nav>
 
-    <main id="top">
-      <!-- ───────────────────────── Header ───────────────────────── -->
+    <main>
       <header class="header">
         <div class="header-text">
           <h1>Wenrong Zou</h1>
@@ -61,9 +60,7 @@
         <img class="photo" src="assets/img/profile.svg" alt="Wenrong Zou" />
       </header>
 
-      <!-- ───────────────────────── About ───────────────────────── -->
-      <section id="about">
-        <h2>About</h2>
+      <section>
         <p>
           I have just completed my M.Sc. in Mathematics at the University of Bonn, where I was
           supervised by
@@ -79,271 +76,16 @@
           <a href="https://anr-false.github.io">FALSE</a> (Formalising Arithmetic in the Lean
           Software Environment).
         </p>
-      </section>
-
-      <!-- ───────────────────────── Research ───────────────────────── -->
-      <section id="research">
-        <h2>Research</h2>
         <p>
           I am interested in the formalisation of mathematics in the
           <a href="https://lean-lang.org">Lean</a> proof assistant, especially mathematics related to
-          number theory.
+          number theory. More on the <a href="research.html">research page</a>.
         </p>
-
-        <h3>Interests</h3>
-        <ul class="plain">
-          <li>Formalisation of mathematics in Lean / Mathlib</li>
-          <li>Algebraic number theory</li>
-          <!-- Add or edit freely. -->
-        </ul>
-
-        <h3>Formalisation projects</h3>
-        <ul class="papers">
-          <li>
-            <span class="paper-title">
-              <a href="https://github.com/WenrongZou/FormalGroupLaws">Formal Group Laws</a>
-            </span>
-            <span class="paper-meta">Formalisation of formal group laws in Lean.</span>
-          </li>
-          <li>
-            <span class="paper-title"><a href="https://github.com/hhu-adam/Robo">Robo</a></span>
-            <span class="paper-meta">
-              A game for learning Lean 4, where a smart-elf joins you on your exploration of the
-              Leaniverse. Mentor: <a href="https://www.math.uni-duesseldorf.de/~zibrowius/">Marcus Zibrowius</a>. Work
-              carried out as an AI for Math Summer Fellow.
-            </span>
-          </li>
-        </ul>
-
-        <h3>Preprints and publications</h3>
-        <p class="muted">Nothing to list yet.</p>
-        <!--
-          When you have something, delete the line above and use this shape:
-
-          <ol class="papers">
-            <li>
-              <span class="paper-title">Title of the paper</span>
-              <span class="paper-meta">with <a href="#">Coauthor</a>. Journal or arXiv:2601.00000.</span>
-              <span class="paper-links"><a href="#">arXiv</a> · <a href="#">journal</a> · <a href="#">code</a></span>
-            </li>
-          </ol>
-        -->
-
       </section>
-
-      <!-- ───────────────────────── Education ───────────────────────── -->
-      <section id="education">
-        <h2>Education</h2>
-        <ul class="timeline">
-          <li>
-            <span class="years">2026 –</span>
-            <span class="entry">
-              <strong>Ph.D. in Mathematics</strong>, Institut Camille Jordan, Université Jean Monnet
-              Saint-Étienne<br />
-              <span class="muted">
-                Advisors: Filippo Nuccio and Riccardo Brasca. ANR project FALSE.
-              </span>
-            </span>
-          </li>
-          <li>
-            <span class="years">2024 – 2026</span>
-            <span class="entry">
-              <strong>M.Sc. in Mathematics</strong>, University of Bonn<br />
-              <span class="muted">
-                Advisors: María Inés de Frutos Fernández and Floris van Doorn
-                <!-- Add your thesis title here once you want it public. -->
-              </span>
-            </span>
-          </li>
-          <li>
-            <span class="years">2020 – 2024</span>
-            <span class="entry">
-              <strong>B.Sc. in Mathematics and Applied Mathematics</strong>, Sichuan University<br />
-              <span class="muted">Advisor: Bin Xu</span>
-            </span>
-          </li>
-        </ul>
-
-        <h3>Awards</h3>
-        <ul class="plain">
-          <li>
-            AI for Math Summer Fellow, AI for Math Fund at Renaissance Philanthropy, whose founding
-            donor is XTX Markets. Project: <a href="https://github.com/hhu-adam/Robo">Robo</a>,
-            mentored by <a href="https://www.math.uni-duesseldorf.de/~zibrowius/">Marcus Zibrowius</a>.
-          </li>
-        </ul>
-      </section>
-
-      <!-- ───────────────────────── Talks ─────────────────────────
-           Hidden for now. To bring back, delete this comment opener and the
-           closer after the Conferences section, and uncomment the two nav
-           links at the top of the file.
-      <section id="talks">
-        <h2>Talks</h2>
-        <ul class="timeline timeline-wide">
-          <li>
-            <span class="years">22 Apr 2025</span>
-            <span class="entry">
-              <strong>Brauer groups and the period–index theorem</strong><br />
-              <span class="muted">Graduate Seminar on Algebraic Geometry, Universität Bonn</span>
-            </span>
-          </li>
-          <li>
-            <span class="years">14 Jan 2025</span>
-            <span class="entry">
-              <strong>Affine Hecke algebras</strong><br />
-              <span class="muted">Graduate Seminar on Advanced Algebra, Universität Bonn</span>
-            </span>
-          </li>
-          <li>
-            <span class="years">3 Dec 2024</span>
-            <span class="entry">
-              <strong>Complex geometry and Hodge theory</strong><br />
-              <span class="muted">Graduate Seminar on Algebraic Geometry, Universität Bonn</span>
-            </span>
-          </li>
-        </ul>
-      </section>
-
-      ───────────────── Conferences and schools ─────────────────
-      <section id="conferences">
-        <h2>Conferences and schools</h2>
-        <ul class="timeline timeline-wide">
-          <li>
-            <span class="years">25 – 29 Jul 2026</span>
-            <span class="entry">
-              <strong>Seventeenth Conference on Interactive Theorem Proving (ITP 2026)</strong><br />
-              <span class="muted">Lisbon, Portugal</span>
-            </span>
-          </li>
-          <li>
-            <span class="years">29 Jun – 3 Jul 2026</span>
-            <span class="entry">
-              <strong>Bridging Lean and LMFDB</strong><br />
-              <span class="muted">University of East Anglia, Norwich, United Kingdom</span>
-            </span>
-          </li>
-          <li>
-            <span class="years">8 – 12 Jun 2026</span>
-            <span class="entry">
-              <strong>Formalizing Higher Categories</strong><br />
-              <span class="muted">Institut Mittag-Leffler, Djursholm, Sweden · online</span>
-            </span>
-          </li>
-          <li>
-            <span class="years">30 Mar – 2 Apr 2026</span>
-            <span class="entry">
-              <strong>Mathlib Reviewer Bootcamp</strong><br />
-              <span class="muted">Stockholm University, Stockholm, Sweden</span>
-            </span>
-          </li>
-          <li>
-            <span class="years">25 – 27 Mar 2026</span>
-            <span class="entry">
-              <strong>SMS Spring Meeting: Formalization and Proof Assistants</strong><br />
-              <span class="muted">UniDistance, Brig, Switzerland</span>
-            </span>
-          </li>
-          <li>
-            <span class="years">7 – 11 Mar 2026</span>
-            <span class="entry">
-              <strong>
-                Arizona Winter School 2026: Computational Aspects of Arithmetic Geometry
-              </strong><br />
-              <span class="muted">University of Arizona, Tucson, United States · online</span>
-            </span>
-          </li>
-          <li>
-            <span class="years">19 – 21 Nov 2025</span>
-            <span class="entry">
-              <strong>Formalization of Algebraic Geometry</strong><br />
-              <span class="muted">University of Heidelberg, Heidelberg, Germany</span>
-            </span>
-          </li>
-          <li>
-            <span class="years">6 – 9 Oct 2025</span>
-            <span class="entry">
-              <strong>Lean for PDEs, an ICERM &amp; SLMath collaboration</strong><br />
-              <span class="muted">
-                Simons Laufer Mathematical Sciences Institute, Berkeley, United States · online
-              </span>
-            </span>
-          </li>
-          <li>
-            <span class="years">21 – 25 Jul 2025</span>
-            <span class="entry">
-              <strong>Formalizing Class Field Theory</strong><br />
-              <span class="muted">Clay Mathematics Institute, Oxford, United Kingdom</span>
-            </span>
-          </li>
-          <li>
-            <span class="years">15 Jul – 24 Aug 2024</span>
-            <span class="entry">
-              <strong>Algebra and Number Theory Summer School</strong><br />
-              <span class="muted">
-                Chinese Academy of Sciences and Peking University, Beijing, China
-              </span>
-            </span>
-          </li>
-          <li>
-            <span class="years">4 – 8 May 2024</span>
-            <span class="entry">
-              <strong>Workshop on the Frontiers in Arithmetic Dynamics (FIAD 2024)</strong><br />
-              <span class="muted">
-                Beijing International Center for Mathematical Research, Beijing, China
-              </span>
-            </span>
-          </li>
-          <li>
-            <span class="years">15 – 26 Jan 2024</span>
-            <span class="entry">
-              <strong>AI for Math Winter School</strong><br />
-              <span class="muted">
-                Beijing International Center for Mathematical Research, Beijing, China
-              </span>
-            </span>
-          </li>
-          <li>
-            <span class="years">24 Jul – 10 Sep 2023</span>
-            <span class="entry">
-              <strong>AI for Math Summer School</strong><br />
-              <span class="muted">
-                Beijing International Center for Mathematical Research, Beijing, China
-              </span>
-            </span>
-          </li>
-        </ul>
-      </section>
-      ───────────────── end of hidden Talks / Conferences ───────────────── -->
-
-      <!--
-        To add a section (e.g. Notes or Teaching), copy this block and add a link
-        to the nav at the top of the file:
-
-        <section id="notes">
-          <h2>Notes</h2>
-          <ul class="papers">
-            <li>
-              <span class="paper-title"><a href="assets/notes-example.pdf">Lecture notes title</a></span>
-              <span class="paper-meta">Seminar or course, year.</span>
-            </li>
-          </ul>
-        </section>
-      -->
 
       <footer>Last updated August 2026.</footer>
     </main>
 
-    <script>
-      document.getElementById("theme-toggle").addEventListener("click", function () {
-        var root = document.documentElement;
-        var current =
-          root.getAttribute("data-theme") ||
-          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        var next = current === "dark" ? "light" : "dark";
-        root.setAttribute("data-theme", next);
-        localStorage.setItem("theme", next);
-      });
-    </script>
+    <script src="theme.js" defer></script>
   </body>
 </html>

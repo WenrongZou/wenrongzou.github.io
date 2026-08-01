@@ -3,23 +3,32 @@
 Personal homepage. Plain HTML and CSS — no Jekyll, no build step, no dependencies.
 
 ```
-index.html          all the content
+index.html          about / landing page
+research.html       interests, formalisation projects, publications
+education.html      degrees and awards
+talks.html          seminar talks
+conferences.html    conferences and schools attended
 style.css           all the styling
+theme.js            the light/dark button
 assets/img/         profile photo
-assets/cv.pdf       CV (not committed yet)
+assets/cv.pdf       CV
 ```
 
 ## Editing
 
-Open `index.html` and type. Each section is marked with a comment, and the empty
-sections contain commented-out examples showing the markup for papers, notes and
-timeline entries — uncomment and fill in.
+Open the page you want and type. The empty sections contain commented-out
+examples showing the markup for papers and timeline entries — uncomment and fill
+in.
 
-To preview, just open `index.html` in a browser (double-click it). Refresh to see
+To preview, just open the file in a browser (double-click it). Refresh to see
 changes. Nothing to compile.
 
-To add a section, copy an existing `<section>` block, give it an `id`, and add a
-matching `<a href="#your-id">` to the nav at the top of the file.
+**The nav bar is copied into all five pages.** If you add, rename or reorder a
+link, do it in every `.html` file. The only difference between them is which link
+carries `class="active"` — that is the page you are currently on.
+
+To add a page: copy an existing one, replace the `<main>` content, and add a link
+to the nav in all the other pages.
 
 ## Profile photo
 
